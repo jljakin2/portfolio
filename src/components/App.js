@@ -42,9 +42,11 @@ const App = () => {
           <Skills />
         </GreySection>
         <section>
+          <SectionHeader>About</SectionHeader>
           <About />
         </section>
         <GreySection>
+          <SectionHeader>Contact</SectionHeader>
           <Contact />
         </GreySection>
       </main>

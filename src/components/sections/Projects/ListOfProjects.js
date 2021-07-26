@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import SingleProject from "./SingleProject";
 
+import { projects } from "../../../data/data";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,12 +14,11 @@ const Container = styled.div`
 `;
 
 const ListOfProjects = () => {
-  return (
-    <Container>
-      <SingleProject projectName="Mentor Match" />
-      <SingleProject projectName="Audiophile" />
-    </Container>
-  );
+  const renderedProjects = projects.map(project => {
+    return <SingleProject {...project} />;
+  });
+
+  return <Container>{renderedProjects}</Container>;
 };
 
 export default ListOfProjects;

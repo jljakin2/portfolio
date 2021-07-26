@@ -6,6 +6,7 @@ const theme = {
   btnHover: "rgba(27, 46, 64, .7)",
   skillsBar: "##1B2E40",
   greyBackground: "#F9F9F9",
+  inputBorder: "#CFCFCF",
   error: "#F67280",
 };
 

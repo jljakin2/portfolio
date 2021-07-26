@@ -11,6 +11,9 @@ const StyledButton = styled.button`
   font-size: 0.875rem;
   cursor: pointer;
 
+  transition: all 0.1s ease-out;
+
+  width: ${({ full }) => (full ? "100%" : "")};
   padding: 1rem 2rem;
 
   &:hover {
@@ -21,12 +24,17 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ outline, children }) => {
-  return <StyledButton outline={outline}>{children}</StyledButton>;
+const Button = ({ outline, full, children }) => {
+  return (
+    <StyledButton outline={outline} full={full}>
+      {children}
+    </StyledButton>
+  );
 };
 
 Button.defaultProps = {
   outline: false,
+  full: false,
 };
 
 export default withTheme(Button);

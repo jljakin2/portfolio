@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 // ===== START OF STYLING =====
 const Heading1 = styled.h1`
-  font-size: 3.5rem;
+  color: ${({ theme }) => theme.mainBtn};
+  font-size: 3.25rem;
   letter-spacing: 2px;
   line-height: 3.625rem;
   font-weight: 700;
