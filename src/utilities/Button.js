@@ -24,9 +24,9 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ outline, full, children }) => {
+const Button = ({ outline, full, children, type }) => {
   return (
-    <StyledButton outline={outline} full={full}>
+    <StyledButton outline={outline} full={full} type={type}>
       {children}
     </StyledButton>
   );
@@ -35,6 +35,7 @@ const Button = ({ outline, full, children }) => {
 Button.defaultProps = {
   outline: false,
   full: false,
+  type: "button",
 };
 
 export default withTheme(Button);

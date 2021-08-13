@@ -30,22 +30,24 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <StyledHeader>
+      <StyledHeader id="home">
         <Navbar />
         <Hero />
       </StyledHeader>
       <main>
-        <GreySection>
+        <GreySection id="projects">
           <SectionHeader>Projects</SectionHeader>
           <ListOfProjects />
+        </GreySection>
+        <GreySection id="skills">
           <SectionHeader>Skills</SectionHeader>
           <Skills />
         </GreySection>
-        <section>
+        <section id="about">
           <SectionHeader>About</SectionHeader>
           <About />
         </section>
-        <GreySection>
+        <GreySection id="contact">
           <SectionHeader>Contact</SectionHeader>
           <Contact />
         </GreySection>

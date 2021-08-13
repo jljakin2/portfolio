@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 import Text from "../../../utilities/Text";
 import Spacer from "../../../utilities/Spacer";
-import Github from "../../../assets/Github";
+import GithubSmall from "../../../assets/GithubSmall";
 import LiveIcon from "../../../assets/LiveIcon";
 import Tag from "./Tag";
 
 // ===== START OF STYLING =====
 const Container = styled.div`
-  /* border: 1px solid red; */
   display: flex;
+  column-gap: 5rem;
 
   width: 100%;
 
@@ -20,12 +20,10 @@ const Container = styled.div`
 `;
 
 const ProjectContent = styled.div`
-  /* border: 1px solid blue; */
   display: flex;
   flex-direction: column;
 
   width: 50%;
-  padding-right: 1rem;
 `;
 
 const ContentHeader = styled.div`
@@ -45,7 +43,7 @@ const ProjectDescription = styled.div`
   flex-direction: column;
 
   width: 50%;
-  padding: 4rem 0 0 1rem;
+  padding-top: 4rem;
 `;
 
 const Screenshot = styled.img`
@@ -84,7 +82,7 @@ const SingleProject = ({
           <Text type="heading3">{name}</Text>
           <IconContainer>
             <a href={github} target="_blank" rel="noreferrer">
-              <Github />
+              <GithubSmall />
             </a>
 
             <Spacer w="1rem" />

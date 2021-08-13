@@ -11,10 +11,11 @@ import heroImg from "../../../assets/heroImg.svg";
 const Container = styled.div`
   /* border: 1px solid blue; */
   display: flex;
+  align-items: center;
 
   width: 100%;
-  height: 85%;
-  padding: 0 5rem;
+  height: 100%;
+  padding: 3rem 5rem 0 5rem;
 `;
 
 const TextContainer = styled.div`

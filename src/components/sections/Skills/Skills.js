@@ -1,11 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { withTheme } from "styled-components";
 
 import Spacer from "../../../utilities/Spacer";
 import ExperienceCard from "./ExperienceCard";
 import SkillBar from "./SkillBar";
 
-import { technical } from "../../../data/data";
+import { leadership, technical } from "../../../data/data";
+import theme from "../../../theme/theme";
 
 const ToggleContainer = styled.div`
   display: flex;
@@ -16,9 +17,8 @@ const ToggleContainer = styled.div`
 `;
 
 const ToggleButtons = styled.div`
-  border: 1px solid ${({ theme }) => theme.mainBtn};
   border-radius: 0.5rem;
-  background: ${({ theme }) => theme.white};
+  /* background: ${({ theme }) => theme.white}; */
   cursor: pointer;
 
   display: flex;
@@ -28,9 +28,8 @@ const ToggleButtons = styled.div`
 `;
 
 const TechnicalToggle = styled.div`
-  background: ${({ theme }) => theme.mainBtn};
-  border-right: 1px solid ${({ theme }) => theme.mainBtn};
   color: ${({ theme }) => theme.white};
+  border-radius: 0.5rem 0 0 0.5rem;
 
   display: flex;
   justify-content: center;
@@ -40,7 +39,7 @@ const TechnicalToggle = styled.div`
 `;
 
 const LeadershipToggle = styled.div`
-  background: transparent;
+  border-radius: 0 0.5rem 0.5rem 0;
 
   display: flex;
   justify-content: center;
@@ -52,6 +51,7 @@ const LeadershipToggle = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
+  column-gap: 5rem;
 
   width: 100%;
   padding: 0 5rem;
@@ -59,7 +59,6 @@ const Container = styled.div`
 
 const ExperienceContainer = styled.div`
   width: 50%;
-  padding-right: 2rem;
 `;
 
 const SkillsContainer = styled.div`
@@ -67,33 +66,63 @@ const SkillsContainer = styled.div`
   flex-direction: column;
 
   width: 50%;
-  padding-left: 2rem;
 `;
 
 const Skills = () => {
-  const renderedSkillBars = technical.skills.map(item => {
-    return <SkillBar title={item.skillName} level={item.skillLevel} />;
+  const [isTech, setIsTech] = useState(true);
+
+  const positions = isTech ? technical.positions : leadership.positions;
+  const skills = isTech ? technical.skills : leadership.skills;
+
+  // render list of elements
+  const renderedExperienceCards = positions.map(item => {
+    return <ExperienceCard {...item} />;
   });
 
+  const renderedSkillBars = skills.map(item => {
+    return (
+      <SkillBar
+        isTech={isTech}
+        title={item.skillName}
+        level={item.skillLevel}
+      />
+    );
+  });
+
+  // state specific styling
+  const technicalStyle = {
+    background: isTech ? theme.mainBtn : theme.white,
+    color: isTech ? theme.white : theme.defaultText,
+  };
+  const leadershipStyle = {
+    background: isTech ? theme.white : theme.leadership,
+    color: isTech ? theme.defaultText : theme.white,
+  };
+
   return (
-    <>
+    <div>
       <ToggleContainer>
         <ToggleButtons>
-          <TechnicalToggle>Technical</TechnicalToggle>
-          <LeadershipToggle>Leadership</LeadershipToggle>
+          <TechnicalToggle
+            style={technicalStyle}
+            onClick={() => setIsTech(!isTech)}>
+            Technical
+          </TechnicalToggle>
+          <LeadershipToggle
+            style={leadershipStyle}
+            onClick={() => setIsTech(!isTech)}>
+            Leadership
+          </LeadershipToggle>
         </ToggleButtons>
       </ToggleContainer>
       <Spacer h="5rem" />
       <Container>
-        <ExperienceContainer>
-          <ExperienceCard heading="Senior Business Operations Specialist" />
-          <ExperienceCard heading="Senior Marketing Strategist" />
-        </ExperienceContainer>
+        <ExperienceContainer>{renderedExperienceCards}</ExperienceContainer>
         <SkillsContainer>{renderedSkillBars}</SkillsContainer>
       </Container>
       <Spacer h="5rem" />
-    </>
+    </div>
   );
 };
 
-export default Skills;
+export default withTheme(Skills);

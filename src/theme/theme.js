@@ -8,6 +8,7 @@ const theme = {
   greyBackground: "#F9F9F9",
   inputBorder: "#CFCFCF",
   error: "#F67280",
+  leadership: "#49BAAC",
 };
 
 export default theme;

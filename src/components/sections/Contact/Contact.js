@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import emailjs from "emailjs-com";
 
 import Text from "../../../utilities/Text";
 import Button from "../../../utilities/Button";
 import LinkedInIcon from "../../../assets/LinkedInIcon";
-import Github from "../../../assets/Github";
+import GithubLarge from "../../../assets/GithubLarge";
 import DevIcon from "../../../assets/DevIcon";
 
 const Container = styled.div`
@@ -35,9 +36,10 @@ const Connect = styled.div`
 const Logos = styled.div`
   display: flex;
   column-gap: 1rem;
+  align-items: center;
 `;
 
-const Form = styled.div`
+const Form = styled.form`
   background: ${({ theme }) => theme.white};
 
   display: flex;
@@ -67,6 +69,58 @@ const StyledTextArea = styled.textarea`
 `;
 
 const Contact = () => {
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const { REACT_APP_EMAILJS_SERVICE_KEY, REACT_APP_EMAILJS_USER_KEY } =
+    process.env;
+
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        REACT_APP_EMAILJS_SERVICE_KEY,
+        "template_0onn0cg",
+        e.target,
+        REACT_APP_EMAILJS_USER_KEY
+      )
+      .then(
+        result => {
+          console.log(result.text);
+        },
+        error => {
+          console.log(error.text);
+        }
+      );
+
+    setValues({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
+  const handleChange = event => {
+    /**
+     * helper function used to keep the local field states updated with the field values
+     */
+
+    // destructure name and value info from the event object.
+    // ! it is super important that the name of the input field and the name of the local state for the field value are the same,
+    // ! otherwise, the state and input field won't update each other
+    const { name, value } = event.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
   return (
     <Container>
       <Content>
@@ -81,17 +135,44 @@ const Contact = () => {
           <Text type="heading6">Other ways to connect.</Text>
           <Logos>
             <LinkedInIcon />
-            <Github />
+            <GithubLarge />
             <DevIcon />
           </Logos>
         </Connect>
       </Content>
-      <Form>
-        <StyledInput type="text" placeholder="Name" />
-        <StyledInput type="email" placeholder="Email" />
-        <StyledInput type="text" placeholder="Subject" />
-        <StyledTextArea placeholder="Message" rows="15" cols="50" />
-        <Button full>Submit</Button>
+      <Form onSubmit={sendEmail}>
+        <StyledInput
+          type="text"
+          placeholder="Name"
+          name="name"
+          value={values.name}
+          onChange={handleChange}
+        />
+        <StyledInput
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={values.email}
+          onChange={handleChange}
+        />
+        <StyledInput
+          type="text"
+          placeholder="Subject"
+          name="subject"
+          value={values.subject}
+          onChange={handleChange}
+        />
+        <StyledTextArea
+          placeholder="Message"
+          rows="15"
+          cols="50"
+          name="message"
+          value={values.message}
+          onChange={handleChange}
+        />
+        <Button full type="submit">
+          Submit
+        </Button>
       </Form>
     </Container>
   );

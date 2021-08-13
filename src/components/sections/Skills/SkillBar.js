@@ -14,19 +14,20 @@ const Container = styled.div`
 `;
 
 const Bar = styled.div`
-  background: ${({ theme }) => theme.mainBtn};
+  background: ${({ theme, isTech }) =>
+    isTech ? theme.mainBtn : theme.leadership};
   border-radius: 0.25rem;
 
   width: ${({ level }) => level};
   height: 1rem;
 `;
 
-const SkillBar = ({ title, level }) => {
+const SkillBar = ({ title, level, isTech }) => {
   return (
     <Container>
       <Text type="heading6">{title}</Text>
       <Spacer h="0.5rem" />
-      <Bar level={level} />
+      <Bar isTech={isTech} level={level} />
     </Container>
   );
 };

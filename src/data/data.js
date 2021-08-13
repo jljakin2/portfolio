@@ -17,6 +17,9 @@ export const projects = [
       "API",
       "Pug",
       "UI Design",
+      "Bootstrap",
+      "Chart.js",
+      "Git",
     ],
     description:
       "I love solving problems and one of the things that I love most about programming is being able to take this skillset to solve real world problems. This project stemmed from exactly that. I recognized the need for an internal platform within my organization that could allow users to pair up for informal mentor/mentee relationships. ",
@@ -37,6 +40,7 @@ export const projects = [
       "React",
       "Styled-Components",
       "Redux",
+      "Git",
     ],
     description:
       "I love solving problems and one of the things that I love most about programming is being able to take this skillset to solve real world problems. This project stemmed from exactly that. I recognized the need for an internal platform within my organization that could allow users to pair up for informal mentor/mentee relationships. ",
