@@ -43,7 +43,6 @@ const ProjectDescription = styled.div`
   flex-direction: column;
 
   width: 50%;
-  padding-top: 4rem;
 `;
 
 const Screenshot = styled.img`
@@ -103,7 +102,12 @@ const SingleProject = ({
       <ProjectDescription>
         <Text type="heading6">Description</Text>
         <Spacer h="3rem" />
-        <Text type="body">{description}</Text>
+        <Text type="body">{description[0]}</Text>
+        <Spacer h="1rem" />
+        <Text type="body">{description[1]}</Text>
+        <Spacer h="1rem" />
+        <Text type="body">{description[2]}</Text>
+        <Spacer h="1rem" />
       </ProjectDescription>
     </Container>
   );

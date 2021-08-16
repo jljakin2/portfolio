@@ -13,9 +13,8 @@ import SectionHeader from "./SectionHeader";
 import GlobalStyle from "../theme/GlobalStyle";
 import theme from "../theme/theme";
 
+// ===== START OF STYLING =====
 const StyledHeader = styled.header`
-  /* border: 1px solid red; */
-
   width: 100%;
   height: 90vh;
 `;
@@ -25,6 +24,7 @@ const GreySection = styled.section`
 
   width: 100%;
 `;
+// ===== END OF STYLING =====
 
 const App = () => {
   return (

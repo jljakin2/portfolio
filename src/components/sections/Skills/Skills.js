@@ -76,7 +76,7 @@ const Skills = () => {
 
   // render list of elements
   const renderedExperienceCards = positions.map(item => {
-    return <ExperienceCard {...item} />;
+    return <ExperienceCard {...item} isTech={isTech} />;
   });
 
   const renderedSkillBars = skills.map(item => {

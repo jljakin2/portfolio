@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Text from "../../../utilities/Text";
+import Spacer from "../../../utilities/Spacer";
 
 // ===== START OF STYLING =====
 const Container = styled.div`
@@ -9,22 +10,54 @@ const Container = styled.div`
   border-radius: 0.5rem;
 
   width: 100%;
-  padding: 1.5rem;
+  padding: 2rem;
 
   &:not(:last-child) {
     margin-bottom: 2rem;
   }
 `;
 
-const ListItem = styled.li``;
+const List = styled.ul`
+  list-style-type: none;
+`;
+
+const ListItem = styled.li`
+  position: relative;
+
+  margin-left: 1.5rem;
+
+  &::before {
+    content: "";
+    border: 2px solid
+      ${({ theme, isTech }) => (isTech ? theme.mainBtn : theme.leadership)};
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0.4rem;
+    left: -1.5rem;
+
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+`;
 // ===== END OF STYLING =====
 
-const ExperienceCard = ({ heading }) => {
+const ExperienceCard = ({ heading, experienceItems, isTech }) => {
+  const renderedItems = experienceItems.map(item => {
+    return (
+      <ListItem isTech={isTech}>
+        <Text type="body">{item}</Text>
+      </ListItem>
+    );
+  });
+
   return (
     <Container>
       <Text type="heading5">{heading}</Text>
-      <ul>
-        <ListItem>
+      <Spacer h="1rem" />
+      <List>
+        {renderedItems}
+        {/* <ListItem>
           <Text type="body">Item1</Text>
         </ListItem>
         <ListItem>
@@ -32,8 +65,8 @@ const ExperienceCard = ({ heading }) => {
         </ListItem>
         <ListItem>
           <Text type="body">Item3</Text>
-        </ListItem>
-      </ul>
+        </ListItem> */}
+      </List>
     </Container>
   );
 };

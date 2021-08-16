@@ -3,10 +3,14 @@ import styled from "styled-components";
 import emailjs from "emailjs-com";
 
 import Text from "../../../utilities/Text";
+import Spacer from "../../../utilities/Spacer";
 import Button from "../../../utilities/Button";
 import LinkedInIcon from "../../../assets/LinkedInIcon";
 import GithubLarge from "../../../assets/GithubLarge";
 import DevIcon from "../../../assets/DevIcon";
+
+// helpers
+import validateForm from "../../../helpers/validateForm";
 
 const Container = styled.div`
   display: flex;
@@ -44,28 +48,62 @@ const Form = styled.form`
 
   display: flex;
   flex-direction: column;
-  row-gap: 1.5rem;
+  row-gap: 2rem;
 
   width: 50%;
-  padding: 2.25rem;
+  padding: 2.5rem 2.25rem;
+`;
+
+const InputContainer = styled.div`
+  position: relative;
 `;
 
 const StyledInput = styled.input`
+  color: ${({ theme }) => theme.defaultText};
   border: 1px solid ${({ theme }) => theme.inputBorder};
   border-radius: 0.5rem;
+  cursor: pointer;
 
   width: 100%;
   height: 3.5rem;
-  padding: 1rem 0.75rem 1rem 0.75rem;
+  padding: 1rem;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.lightText};
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid ${({ theme }) => theme.leadership};
+  }
 `;
 
 const StyledTextArea = styled.textarea`
+  color: ${({ theme }) => theme.defaultText};
   border: 1px solid ${({ theme }) => theme.inputBorder};
   border-radius: 0.5rem;
   font-family: "Open Sans", sans-serif;
+  cursor: pointer;
 
   width: 100%;
-  padding: 1rem 0.75rem 1rem 0.75rem;
+  padding: 1rem;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.lightText};
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid ${({ theme }) => theme.leadership};
+  }
+`;
+
+const Error = styled.small`
+  color: ${({ theme }) => theme.error};
+
+  position: absolute;
+  top: -1.5rem;
+  left: 1rem;
 `;
 
 const Contact = () => {
@@ -76,34 +114,44 @@ const Contact = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const { REACT_APP_EMAILJS_SERVICE_KEY, REACT_APP_EMAILJS_USER_KEY } =
     process.env;
 
   const sendEmail = e => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        REACT_APP_EMAILJS_SERVICE_KEY,
-        "template_0onn0cg",
-        e.target,
-        REACT_APP_EMAILJS_USER_KEY
-      )
-      .then(
-        result => {
-          console.log(result.text);
-        },
-        error => {
-          console.log(error.text);
-        }
-      );
+    // use the form validation helper to see if there are errors, and then set the local errors state with the
+    // errors object that comes back from the validation helper
+    const formErrors = validateForm(values);
+    setErrors(formErrors);
 
-    setValues({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    // send email if there aren't any errors
+    if (Object.keys(formErrors).length === 0) {
+      emailjs
+        .sendForm(
+          REACT_APP_EMAILJS_SERVICE_KEY,
+          "template_0onn0cg",
+          e.target,
+          REACT_APP_EMAILJS_USER_KEY
+        )
+        .then(
+          result => {
+            console.log(result.text);
+          },
+          error => {
+            console.log(error.text);
+          }
+        );
+
+      setValues({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    }
   };
 
   const handleChange = event => {
@@ -119,6 +167,10 @@ const Contact = () => {
       ...values,
       [name]: value,
     });
+
+    if (Object.keys(errors).length !== 0) {
+      setErrors({ ...errors, [name]: undefined });
+    }
   };
 
   return (
@@ -126,10 +178,25 @@ const Contact = () => {
       <Content>
         <Text type="heading5">Let's work together.</Text>
         <Text type="body" light>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue eu
-          consequat ac felis donec et odio pellentesque. Tellus elementum
-          sagittis vitae et leo.
+          Whether you think there could be a good fit with your organization, or
+          if you just want to chat about any of the topics above, I would love
+          to hear from you.
+        </Text>
+        <Spacer h="1rem" />
+        <Text type="body" light>
+          If you fill out the form, it will route directly to my email where we
+          can continue the discussion there.
+        </Text>
+        <Spacer h="1rem" />
+        <Text type="body" light>
+          If nothing else, thank you for taking the time to read through my
+          portfolio. You made it all the way to the end! Be sure to check back
+          often as I plan on adding more features that don’t just show off my
+          work but also provides value to you.
+        </Text>
+        <Spacer h="1rem" />
+        <Text type="body" light>
+          I hope you are having a great day!
         </Text>
         <Connect>
           <Text type="heading6">Other ways to connect.</Text>
@@ -140,36 +207,48 @@ const Contact = () => {
           </Logos>
         </Connect>
       </Content>
-      <Form onSubmit={sendEmail}>
-        <StyledInput
-          type="text"
-          placeholder="Name"
-          name="name"
-          value={values.name}
-          onChange={handleChange}
-        />
-        <StyledInput
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={values.email}
-          onChange={handleChange}
-        />
-        <StyledInput
-          type="text"
-          placeholder="Subject"
-          name="subject"
-          value={values.subject}
-          onChange={handleChange}
-        />
-        <StyledTextArea
-          placeholder="Message"
-          rows="15"
-          cols="50"
-          name="message"
-          value={values.message}
-          onChange={handleChange}
-        />
+      <Form onSubmit={sendEmail} noValidate>
+        <InputContainer>
+          <StyledInput
+            type="text"
+            placeholder="Name"
+            name="name"
+            value={values.name}
+            onChange={handleChange}
+          />
+          {errors.name && <Error>{errors.name}</Error>}
+        </InputContainer>
+        <InputContainer>
+          <StyledInput
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={values.email}
+            onChange={handleChange}
+          />
+          {errors.email && <Error>{errors.email}</Error>}
+        </InputContainer>
+        <InputContainer>
+          <StyledInput
+            type="text"
+            placeholder="Subject"
+            name="subject"
+            value={values.subject}
+            onChange={handleChange}
+          />
+          {errors.subject && <Error>{errors.subject}</Error>}
+        </InputContainer>
+        <InputContainer>
+          <StyledTextArea
+            placeholder="Message"
+            rows="15"
+            cols="50"
+            name="message"
+            value={values.message}
+            onChange={handleChange}
+          />
+          {errors.message && <Error>{errors.message}</Error>}
+        </InputContainer>
         <Button full type="submit">
           Submit
         </Button>
