@@ -9,13 +9,41 @@ import heroImg from "../../../assets/heroImg.svg";
 
 // ===== START OF STYLING =====
 const Container = styled.div`
-  /* border: 1px solid blue; */
   display: flex;
   align-items: center;
 
   width: 100%;
   height: 100%;
-  padding: 3rem 5rem 0 5rem;
+  padding: 3rem 7rem 0 7rem;
+
+  // ===== MAX-WIDTH =====
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+    padding: 3rem 3rem 0 3rem;
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    padding: 8rem 1.5rem 5rem 1.5rem;
+  }
+
+  // ===== MIN-WIDTH =====
+  // 1600px
+  @media only screen and (min-width: 100em) {
+    padding: 3rem 10rem 0 10rem;
+    /* background: red; */
+  }
+
+  // 1800px
+  @media only screen and (min-width: 112.5em) {
+    padding: 3rem 12rem 0 12rem;
+    /* background: blue; */
+  }
 `;
 
 const TextContainer = styled.div`
@@ -24,6 +52,18 @@ const TextContainer = styled.div`
   justify-content: center;
 
   width: 50%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    align-items: center;
+
+    width: 100%;
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    text-align: center;
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -31,10 +71,24 @@ const ImgContainer = styled.div`
   justify-content: flex-end;
 
   width: 50%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    order: -1;
+    justify-content: center;
+
+    width: 100%;
+    margin-bottom: 3rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    margin-top: 1.5rem;
+  }
 `;
 
 const StyledHeroImg = styled.img`
@@ -48,11 +102,11 @@ const Hero = () => {
     <Container>
       <TextContainer>
         <Text type="heading4" light>
-          Hi. My name is Jeff
+          Hi. My name is Jeff.
         </Text>
         <Spacer h="0.5rem" />
         <Text type="heading1">I am a web developer</Text>
-        <Spacer h="2rem" />
+        <Spacer h="3rem" />
         <ButtonContainer>
           <Button outline>Contact Me</Button>
           <Spacer w="1rem" />

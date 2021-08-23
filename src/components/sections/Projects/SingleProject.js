@@ -10,12 +10,18 @@ import Tag from "./Tag";
 // ===== START OF STYLING =====
 const Container = styled.div`
   display: flex;
-  column-gap: 5rem;
+  column-gap: 6rem;
 
   width: 100%;
 
   &:not(:last-child) {
     margin-bottom: 8rem;
+  }
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -24,18 +30,35 @@ const ProjectContent = styled.div`
   flex-direction: column;
 
   width: 50%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
 `;
 
 const ContentHeader = styled.div`
   display: flex;
 
   margin-bottom: 2rem;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const IconContainer = styled.div`
   display: flex;
 
   margin-left: auto;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    margin: 1.5rem 0 0 0;
+  }
 `;
 
 const ProjectDescription = styled.div`
@@ -43,6 +66,18 @@ const ProjectDescription = styled.div`
   flex-direction: column;
 
   width: 50%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    align-items: center;
+
+    width: 100%;
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    text-align: center;
+  }
 `;
 
 const Screenshot = styled.img`
@@ -59,6 +94,11 @@ const TagContainer = styled.div`
   row-gap: 0.5rem;
 
   width: 100%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    justify-content: center;
+  }
 `;
 // ===== END OF STYLING =====
 
@@ -101,7 +141,7 @@ const SingleProject = ({
       </ProjectContent>
       <ProjectDescription>
         <Text type="heading6">Description</Text>
-        <Spacer h="3rem" />
+        <Spacer h="1.5rem" />
         <Text type="body">{description[0]}</Text>
         <Spacer h="1rem" />
         <Text type="body">{description[1]}</Text>

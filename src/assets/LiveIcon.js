@@ -8,8 +8,8 @@ const StyledIcon = styled.svg`
 const LiveIcon = () => {
   return (
     <StyledIcon
-      width="49px"
-      height="37px"
+      width="42px"
+      height="30px"
       viewBox="0 0 49 37"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg">

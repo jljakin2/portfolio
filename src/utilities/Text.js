@@ -9,6 +9,12 @@ const Heading1 = styled.h1`
   letter-spacing: 2px;
   line-height: 3.625rem;
   font-weight: 700;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
 `;
 
 const Heading2 = styled.h2`
@@ -16,6 +22,11 @@ const Heading2 = styled.h2`
   letter-spacing: 1.43px;
   line-height: 2.75rem;
   font-weight: 700;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    font-size: 2.25rem;
+  }
 `;
 
 const Heading3 = styled.h3`
@@ -23,24 +34,44 @@ const Heading3 = styled.h3`
   letter-spacing: 1.14px;
   line-height: 2rem;
   font-weight: 700;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    font-size: 1.75rem;
+  }
 `;
 
 const Heading4 = styled.h4`
   font-size: 1.75rem;
   letter-spacing: 2px;
   font-weight: 600;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Heading5 = styled.h5`
   font-size: 1.5rem;
   letter-spacing: 1.71px;
   font-weight: 400;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    font-size: 1rem;
+  }
 `;
 
 const Heading6 = styled.h6`
   font-size: 1.125rem;
   letter-spacing: 1.29px;
   font-weight: 400;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    font-size: 0.75rem;
+  }
 `;
 
 const Body = styled.p`

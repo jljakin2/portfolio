@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { useMediaQuery } from "react-responsive";
 
 import Logo from "../assets/Logo";
-// import NavItem from "./NavItem";
+import Hamburger from "../assets/Hamburger";
+import CloseIcon from "../assets/CloseIcon";
+import MobileLogo from "../assets/MobileLogo";
+import MobileMenu from "./MobileMenu";
 
 // ===== START OF STYLING =====
 const Container = styled.div`
   background: ${({ theme }) => theme.white};
-  /* box-shadow: 0px 3px 1.125rem 5px rgba(0, 0, 0, 0.2); */
 
   display: flex;
   align-items: center;
@@ -19,12 +22,41 @@ const Container = styled.div`
   padding: 0 5rem;
 
   z-index: 10000;
+
+  // ===== MAX-WIDTH =====
+  // 900px
+  @media only screen and (max-width: 56.25em) {
+    /* background: yellow; */
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    padding: 0 1.5rem;
+  }
+
+  // ===== MIN-WIDTH =====
+  // 1600px
+  @media only screen and (min-width: 100em) {
+    padding: 0 10rem;
+    /* background: red; */
+  }
+
+  // 1800px
+  @media only screen and (min-width: 112.5em) {
+    padding: 0 12rem;
+    /* background: blue; */
+  }
 `;
 
 const ItemContainer = styled.div`
   display: flex;
 
   margin-left: auto;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    display: none;
+  }
 `;
 
 const NavItem = styled.div`
@@ -72,8 +104,23 @@ const NavItem = styled.div`
 // ===== END OF STYLING =====
 
 const NavBar = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const isMobile = useMediaQuery({
+    query: "(max-width: 25em)",
+  });
+
+  const showMobileMenu = () => {
+    setMobileMenu(true);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenu(false);
+  };
+
   return (
     <Container>
+      {mobileMenu && <MobileMenu closeMobileMenu={closeMobileMenu} />}
       <Link
         activeClass="active"
         to="home"
@@ -81,8 +128,11 @@ const NavBar = () => {
         smooth={true}
         offset={0}
         duration={500}>
-        <Logo />
+        {isMobile ? <MobileLogo /> : <Logo />}
       </Link>
+
+      {!mobileMenu && <Hamburger showMobileMenu={showMobileMenu} />}
+      {mobileMenu && <CloseIcon closeMobileMenu={closeMobileMenu} />}
 
       <ItemContainer>
         <NavItem>

@@ -14,6 +14,30 @@ const Container = styled.div`
   width: 100%;
   height: 12rem;
   padding: 2rem 5rem;
+
+  // ===== MAX-WIDTH =====
+  // 900px
+  @media only screen and (max-width: 56.25em) {
+    /* background: yellow; */
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    padding: 2rem 1.5rem;
+  }
+
+  // ===== MIN-WIDTH =====
+  // 1600px
+  @media only screen and (min-width: 100em) {
+    padding: 2rem 10rem;
+    /* background: red; */
+  }
+
+  // 1800px
+  @media only screen and (min-width: 112.5em) {
+    padding: 2rem 12rem;
+    /* background: blue; */
+  }
 `;
 
 const Footer = () => {

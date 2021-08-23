@@ -25,6 +25,16 @@ const ToggleButtons = styled.div`
 
   height: 3rem;
   width: 20%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    width: 35%;
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    width: 60%;
+  }
 `;
 
 const TechnicalToggle = styled.div`
@@ -51,14 +61,45 @@ const LeadershipToggle = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 5rem;
+  column-gap: 6rem;
 
   width: 100%;
   padding: 0 5rem;
+
+  // ===== MAX-WIDTH =====
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 4rem;
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    padding: 0 1.5rem;
+  }
+
+  // ===== MIN-WIDTH =====
+  // 1600px
+  @media only screen and (min-width: 100em) {
+    padding: 0 10rem;
+    /* background: red; */
+  }
+
+  // 1800px
+  @media only screen and (min-width: 112.5em) {
+    padding: 0 12rem;
+    /* background: blue; */
+  }
 `;
 
 const ExperienceContainer = styled.div`
   width: 50%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    width: 100%;
+  }
 `;
 
 const SkillsContainer = styled.div`
@@ -66,6 +107,13 @@ const SkillsContainer = styled.div`
   flex-direction: column;
 
   width: 50%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    order: -1;
+
+    width: 100%;
+  }
 `;
 
 const Skills = () => {

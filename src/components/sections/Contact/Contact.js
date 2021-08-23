@@ -18,6 +18,32 @@ const Container = styled.div`
 
   width: 100%;
   padding: 0 5rem 5rem 5rem;
+
+  // ===== MAX-WIDTH =====
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    flex-direction: column;
+    align-items: center;
+    column-gap: 0;
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    padding: 0 1.5rem 5rem 1.5rem;
+  }
+
+  // ===== MIN-WIDTH =====
+  // 1600px
+  @media only screen and (min-width: 100em) {
+    padding: 0 10rem 5rem 10rem;
+    /* background: red; */
+  }
+
+  // 1800px
+  @media only screen and (min-width: 112.5em) {
+    padding: 0 12rem 5rem 12rem;
+    /* background: blue; */
+  }
 `;
 
 const Content = styled.div`
@@ -26,6 +52,14 @@ const Content = styled.div`
   row-gap: 1.5rem;
 
   width: 50%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+  }
 `;
 
 const Connect = styled.div`
@@ -35,12 +69,26 @@ const Connect = styled.div`
 
   margin-top: auto;
   margin-bottom: 5rem;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    align-items: center;
+
+    margin-top: 3rem;
+  }
 `;
 
 const Logos = styled.div`
   display: flex;
   column-gap: 1rem;
   align-items: center;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    column-gap: 2rem;
+
+    margin-top: 1rem;
+  }
 `;
 
 const Form = styled.form`
@@ -52,6 +100,11 @@ const Form = styled.form`
 
   width: 50%;
   padding: 2.5rem 2.25rem;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    width: 100%;
+  }
 `;
 
 const InputContainer = styled.div`

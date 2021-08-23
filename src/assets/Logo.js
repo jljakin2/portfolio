@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useMediaQuery } from "react-responsive";
 
 import Text from "../utilities/Text";
 import Spacer from "../utilities/Spacer";
@@ -12,11 +13,15 @@ const Container = styled.div`
 `;
 
 const Logo = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 400px)",
+  });
+
   return (
     <Container>
       <svg
-        width="60px"
-        height="60px"
+        width={isMobile ? "40px" : "60px"}
+        height={isMobile ? "40px" : "60px"}
         viewBox="0 0 60 60"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg">

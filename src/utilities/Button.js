@@ -17,10 +17,18 @@ const StyledButton = styled.button`
   padding: 1rem 2rem;
 
   &:hover {
-    background: ${({ theme }) => theme.btnHover};
+    background: ${({ outline, theme }) =>
+      outline ? theme.mainBtn : theme.btnHover};
     border: ${({ outline, theme }) =>
-      outline ? `1px solid ${theme.btnHover}` : "none"};
+      outline ? `1px solid ${theme.mainBtn}` : "none"};
     color: ${({ theme }) => theme.white};
+  }
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    font-size: 0.75rem;
+
+    padding: 0.75rem 1.5rem;
   }
 `;
 

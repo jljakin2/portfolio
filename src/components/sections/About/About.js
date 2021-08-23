@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useMediaQuery } from "react-responsive";
 
 import Text from "../../../utilities/Text";
 import Spacer from "../../../utilities/Spacer";
@@ -12,6 +13,25 @@ const Container = styled.div`
   width: 100%;
   padding: 0 5rem;
   margin-bottom: 5rem;
+
+  // ===== MAX-WIDTH =====
+  // 400px
+  @media only screen and (max-width: 25em) {
+    padding: 0 1.5rem;
+  }
+
+  // ===== MIN-WIDTH =====
+  // 1600px
+  @media only screen and (min-width: 100em) {
+    padding: 0 10rem;
+    /* background: red; */
+  }
+
+  // 1800px
+  @media only screen and (min-width: 112.5em) {
+    padding: 0 12rem;
+    /* background: blue; */
+  }
 `;
 
 const ItemContainer = styled.div`
@@ -21,27 +41,57 @@ const ItemContainer = styled.div`
   &:not(:last-child) {
     margin-bottom: 4rem;
   }
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    flex-direction: column;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 10rem;
+    }
+  }
 `;
 
 const ItemImage = styled.img`
   width: 25%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    width: 65%;
+  }
 `;
 
 const ItemText = styled.div`
+  text-align: center;
+
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
 
   width: 75%;
+
+  // 850px
+  @media only screen and (max-width: 53.125em) {
+    width: 100%;
+  }
 `;
 
 const About = () => {
+  const isNotDesktop = useMediaQuery({
+    query: "(max-width: 850px)",
+  });
+
+  const style = isNotDesktop ? { order: -1, marginBottom: "4rem" } : {};
+
+  // TODO: update links to include frontend mentor and contact section
   return (
     <Container>
       <ItemContainer>
         <ItemImage
           src={commImg}
           alt="Jeff giving a presentation in front of a screen with charts on it"
+          style={style}
         />
 
         <ItemText>
@@ -81,12 +131,14 @@ const About = () => {
         <ItemImage
           src={readingImg}
           alt="Jeff sitting in a chair reading a book under a lamp"
+          style={style}
         />
       </ItemContainer>
       <ItemContainer>
         <ItemImage
           src={golfImg}
           alt="Jeff with his back turned hitting a golf shot on a golf course"
+          style={style}
         />
         <ItemText>
           <Text type="heading5">Love to be active</Text>
@@ -94,11 +146,15 @@ const About = () => {
             Being active and staying healthy is another foundational value in my
             life. I love exercising outdoors, going for hikes, playing tennis,
             and taking my son to the park. My favorite sport is golf. It takes
-            my love for learning and growing, being active outdoors, and testing
-            my abilities to a whole new level. It is the most challenging sport
-            I have ever played but it makes it that much more satisfying when
-            things are going well on the course. To see all of the hardwork and
-            dedication pay off is an unbelievable feeling.
+            my love for{" "}
+            <a href="https://www.google.com" className="link">
+              learning
+            </a>{" "}
+            and growing, being active outdoors, and testing my abilities to a
+            whole new level. It is the most challenging sport I have ever played
+            but it makes it that much more satisfying when things are going well
+            on the course. To see all of the hardwork and dedication pay off is
+            an unbelievable feeling.
           </Text>
         </ItemText>
       </ItemContainer>

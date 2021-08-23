@@ -17,6 +17,11 @@ import theme from "../theme/theme";
 const StyledHeader = styled.header`
   width: 100%;
   height: 90vh;
+
+  // 400px
+  @media only screen and (max-width: 25em) {
+    height: 100vh;
+  }
 `;
 
 const GreySection = styled.section`
