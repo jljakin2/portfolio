@@ -1,18 +1,24 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { withTheme } from "styled-components";
+
+import theme from "../theme/theme";
 
 const StyledIcon = styled.svg`
   cursor: pointer;
 `;
 
 const LiveIcon = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <StyledIcon
       width="42px"
       height="30px"
       viewBox="0 0 49 37"
       version="1.1"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}>
       <g
         id="Main"
         stroke="none"
@@ -22,7 +28,7 @@ const LiveIcon = () => {
         <g
           id="Desktop"
           transform="translate(-638.000000, -947.000000)"
-          fill="#1B2E40"
+          fill={isHovered ? theme.btnHover : theme.mainBtn}
           fillRule="nonzero">
           <g
             id="Live-Broadcasting"
@@ -43,4 +49,4 @@ const LiveIcon = () => {
   );
 };
 
-export default LiveIcon;
+export default withTheme(LiveIcon);

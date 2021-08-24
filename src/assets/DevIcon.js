@@ -1,11 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { withTheme } from "styled-components";
+
+import theme from "../theme/theme";
 
 const StyledIcon = styled.svg`
   cursor: pointer;
 `;
 
 const DevIcon = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <a href="https://dev.to/jljakin2" target="_blank" rel="noreferrer">
       <StyledIcon
@@ -13,7 +17,9 @@ const DevIcon = () => {
         height="28px"
         viewBox="0 0 48 28"
         version="1.1"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}>
         <g
           id="Main"
           stroke="none"
@@ -23,7 +29,7 @@ const DevIcon = () => {
           <g
             id="Desktop"
             transform="translate(-232.000000, -5674.000000)"
-            fill="#1B2E40"
+            fill={isHovered ? theme.btnHover : theme.mainBtn}
             fill-rule="nonzero">
             <g id="Group-3" transform="translate(232.000000, 5674.000000)">
               <g id="Path-2" transform="translate(12.000000, 9.678000)">
@@ -42,4 +48,4 @@ const DevIcon = () => {
   );
 };
 
-export default DevIcon;
+export default withTheme(DevIcon);

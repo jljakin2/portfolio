@@ -159,6 +159,10 @@ const Error = styled.small`
   left: 1rem;
 `;
 
+const StyledLink = styled.a`
+  cursor: pointer;
+`;
+
 const Contact = () => {
   const [values, setValues] = useState({
     name: "",
@@ -254,9 +258,17 @@ const Contact = () => {
         <Connect>
           <Text type="heading6">Other ways to connect.</Text>
           <Logos>
-            <LinkedInIcon />
-            <GithubLarge />
-            <DevIcon />
+            <StyledLink href="https://www.linkedin.com/in/jeff-jakinovich-b6b14943/">
+              <LinkedInIcon />
+            </StyledLink>
+            <StyledLink href="https://github.com/jljakin2">
+              <GithubLarge />
+            </StyledLink>
+            <StyledLink
+              href="https://dev.to/jljakin2
+            |\\\\">
+              <DevIcon />
+            </StyledLink>
           </Logos>
         </Connect>
       </Content>
