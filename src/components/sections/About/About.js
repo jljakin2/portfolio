@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-scroll";
 
 import Text from "../../../utilities/Text";
 import Spacer from "../../../utilities/Spacer";
@@ -123,11 +124,22 @@ const About = () => {
             things that has excited me most about software. Given how much there
             is to learn and how it keeps evolving there seems to be an endless
             amount to learn. I also love getting recommendations for new things
-            to check out so please feel free to share any of them with me in the
-            <a href="#contact" className="link">
+            to check out so please feel free to share any of them with me in
+            the&nbsp;
+            <Link
+              activeClass="active"
+              className="link"
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}>
               contact
-            </a>{" "}
-            section below.
+            </Link>
+            {/* <a href="#contact" className="link">
+              contact
+            </a>{" "} */}
+            &nbsp;section below.
           </Text>
         </ItemText>
         <ItemImage
