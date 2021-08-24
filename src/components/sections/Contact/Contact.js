@@ -8,6 +8,7 @@ import Button from "../../../utilities/Button";
 import LinkedInIcon from "../../../assets/LinkedInIcon";
 import GithubLarge from "../../../assets/GithubLarge";
 import DevIcon from "../../../assets/DevIcon";
+import Toast from "../../Toast";
 
 // helpers
 import validateForm from "../../../helpers/validateForm";
@@ -169,6 +170,13 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({});
 
+  const [showToast, setShowToast] = useState(false);
+  const [toastType, setToastType] = useState({});
+
+  const handleShowToast = () => {
+    setShowToast(!showToast);
+  };
+
   const { REACT_APP_EMAILJS_SERVICE_KEY, REACT_APP_EMAILJS_USER_KEY } =
     process.env;
 
@@ -192,18 +200,33 @@ const Contact = () => {
         .then(
           result => {
             console.log(result.text);
+            setToastType({
+              type: "success",
+              message: "Sweet! Talk to you soon 👋",
+            });
+            handleShowToast();
+            setValues({
+              name: "",
+              email: "",
+              subject: "",
+              message: "",
+            });
           },
           error => {
             console.log(error.text);
+            setToastType({
+              type: "error",
+              message: "Uh oh! Something went wrong 😕",
+            });
+            handleShowToast();
+            setValues({
+              name: "",
+              email: "",
+              subject: "",
+              message: "",
+            });
           }
         );
-
-      setValues({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
     }
   };
 
@@ -228,6 +251,7 @@ const Contact = () => {
 
   return (
     <Container>
+      {showToast && <Toast {...toastType} handleShowToast={handleShowToast} />}
       <Content>
         <Text type="heading5">Let's work together.</Text>
         <Text type="body" light>

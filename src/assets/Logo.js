@@ -13,15 +13,11 @@ const Container = styled.div`
 `;
 
 const Logo = () => {
-  const isMobile = useMediaQuery({
-    query: "(max-width: 400px)",
-  });
-
   return (
     <Container>
       <svg
-        width={isMobile ? "40px" : "60px"}
-        height={isMobile ? "40px" : "60px"}
+        width="50px"
+        height="50px"
         viewBox="0 0 60 60"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +51,7 @@ const Logo = () => {
         </g>
       </svg>
       <Spacer w="1rem" />
-      <Text type="heading4">Jeff Jakinovich</Text>
+      <Text type="heading5">Jeff Jakinovich</Text>
     </Container>
   );
 };
