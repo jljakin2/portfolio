@@ -46,9 +46,18 @@ export const projects = [
       "Git",
     ],
     description: [
-      "I found this project on Frontend Mentor. Frontend Mentor is a site that supplies UI designs so users can code the designs without support or tutorials. The challenges range from “Newbie” to “Guru”. This project rates as one of the most challenging projects on the platform.",
+      <div>
+        I found this project on{" "}
+        <a href="https://www.frontendmentor.io" className="link">
+          Frontend Mentor
+        </a>
+        . Frontend Mentor is a site that supplies UI designs so users can code
+        the designs without support or tutorials. The challenges range from
+        “Newbie” to “Guru”. This project rates as one of the most challenging
+        projects on the platform.
+      </div>,
       "I used the MERN stack to complete this project. React allowed me to build a scalable front-end experience for the user. I also used Redux to help with the state management. All elements were custom styled using Styled Components. I built the backend using Node.js, Express, and MongoDB. I also built a REST API  for the front-end and back-end to communicate.  I used Redux-Thunk to request data to feed into the global state so each React component can get access to it.",
-      "Take a look around the store and if you see anything you like. Add it to the cart and don’t worry…whatever you order is on the house.",
+      "Take a look around the store and if you see anything you like add it to the cart. Don’t worry…whatever you order is on the house 😃.",
     ],
   },
 ];

@@ -31,11 +31,32 @@ body {
     padding: 1px 2px;
     cursor: pointer;
 
-    &:hover {
-        background: #1B2E40;
-        color: #fff;
+    &:visited {
+        color: ${({ theme }) => theme.leadership};
+        border-bottom: 2px solid ${({ theme }) => theme.leadership};
+        padding: 1px 2px;
     }
+
+    &:hover {
+        background: ${({ theme }) => theme.mainBtn};
+        color: ${({ theme }) => theme.white};
+    }
+
+    &:active {
+        background: ${({ theme }) => theme.mainBtn};
+        color: ${({ theme }) => theme.white};
+    }
+
+    &:focus {
+        outline: none;
+        border: 2px dotted ${({ theme }) => theme.mainBtn};
+        border-radius: 0.25rem;
+        padding: .2rem;
+    }
+
 }
+
+
 `;
 
 export default GlobalStyle;

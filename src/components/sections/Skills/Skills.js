@@ -18,7 +18,6 @@ const ToggleContainer = styled.div`
 
 const ToggleButtons = styled.div`
   border-radius: 0.5rem;
-  /* background: ${({ theme }) => theme.white}; */
   cursor: pointer;
 
   display: flex;
@@ -38,7 +37,8 @@ const ToggleButtons = styled.div`
 `;
 
 const TechnicalToggle = styled.div`
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme, isTech }) => (isTech ? theme.white : theme.defaultText)};
+  background: ${({ theme, isTech }) => (isTech ? theme.mainBtn : theme.white)};
   border-radius: 0.5rem 0 0 0.5rem;
 
   display: flex;
@@ -46,9 +46,19 @@ const TechnicalToggle = styled.div`
   align-items: center;
 
   width: 50%;
+
+  transition: all 0.15s ease-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.white};
+    background: ${({ theme }) => theme.mainBtn};
+  }
 `;
 
 const LeadershipToggle = styled.div`
+  color: ${({ theme, isTech }) => (isTech ? theme.defaultText : theme.white)};
+  background: ${({ theme, isTech }) =>
+    isTech ? theme.white : theme.leadership};
   border-radius: 0 0.5rem 0.5rem 0;
 
   display: flex;
@@ -56,6 +66,13 @@ const LeadershipToggle = styled.div`
   align-items: center;
 
   width: 50%;
+
+  transition: all 0.15s ease-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.white};
+    background: ${({ theme }) => theme.leadership};
+  }
 `;
 
 const Container = styled.div`
@@ -152,13 +169,15 @@ const Skills = () => {
       <ToggleContainer>
         <ToggleButtons>
           <TechnicalToggle
-            style={technicalStyle}
-            onClick={() => setIsTech(!isTech)}>
+            // style={technicalStyle}
+            onClick={() => setIsTech(!isTech)}
+            isTech={isTech}>
             Technical
           </TechnicalToggle>
           <LeadershipToggle
-            style={leadershipStyle}
-            onClick={() => setIsTech(!isTech)}>
+            // style={leadershipStyle}
+            onClick={() => setIsTech(!isTech)}
+            isTech={isTech}>
             Leadership
           </LeadershipToggle>
         </ToggleButtons>

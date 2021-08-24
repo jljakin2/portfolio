@@ -63,8 +63,6 @@ const ItemImage = styled.img`
 `;
 
 const ItemText = styled.div`
-  text-align: center;
-
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -73,6 +71,8 @@ const ItemText = styled.div`
 
   // 850px
   @media only screen and (max-width: 53.125em) {
+    text-align: center;
+
     width: 100%;
   }
 `;
@@ -84,7 +84,6 @@ const About = () => {
 
   const style = isNotDesktop ? { order: -1, marginBottom: "4rem" } : {};
 
-  // TODO: update links to include frontend mentor and contact section
   return (
     <Container>
       <ItemContainer>
@@ -125,7 +124,10 @@ const About = () => {
             is to learn and how it keeps evolving there seems to be an endless
             amount to learn. I also love getting recommendations for new things
             to check out so please feel free to share any of them with me in the
-            contact section below.
+            <a href="#contact" className="link">
+              contact
+            </a>{" "}
+            section below.
           </Text>
         </ItemText>
         <ItemImage
@@ -146,15 +148,11 @@ const About = () => {
             Being active and staying healthy is another foundational value in my
             life. I love exercising outdoors, going for hikes, playing tennis,
             and taking my son to the park. My favorite sport is golf. It takes
-            my love for{" "}
-            <a href="https://www.google.com" className="link">
-              learning
-            </a>{" "}
-            and growing, being active outdoors, and testing my abilities to a
-            whole new level. It is the most challenging sport I have ever played
-            but it makes it that much more satisfying when things are going well
-            on the course. To see all of the hardwork and dedication pay off is
-            an unbelievable feeling.
+            my love for learning and growing, being active outdoors, and testing
+            my abilities to a whole new level. It is the most challenging sport
+            I have ever played but it makes it that much more satisfying when
+            things are going well on the course. To see all of the hardwork and
+            dedication pay off is an unbelievable feeling.
           </Text>
         </ItemText>
       </ItemContainer>
