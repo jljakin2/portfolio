@@ -25,13 +25,14 @@ const Container = styled.div`
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
+    row-gap: 1rem;
 
     padding: 3rem 3rem 0 3rem;
   }
 
   // 450px
   @media only screen and (max-width: ${media.mobile}) {
-    row-gap: 1rem;
+    justify-content: flex-start;
 
     padding: 8rem 1.5rem 5rem 1.5rem;
   }
