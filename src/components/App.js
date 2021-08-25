@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 
 import Navbar from "./Navbar";
@@ -9,7 +9,6 @@ import About from "./sections/About/About";
 import Contact from "./sections/Contact/Contact";
 import Footer from "./Footer";
 import SectionHeader from "./SectionHeader";
-import Toast from "./Toast";
 
 import GlobalStyle from "../theme/GlobalStyle";
 import theme from "../theme/theme";

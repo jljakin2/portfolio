@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-scroll";
 
 import Text from "../../../utilities/Text";
 import Spacer from "../../../utilities/Spacer";
@@ -110,9 +111,22 @@ const Hero = () => {
         <Text type="heading1">I am a web developer</Text>
         <Spacer h="3rem" />
         <ButtonContainer>
-          <Button outline>Contact Me</Button>
+          <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}>
+            <Button outline>Contact Me</Button>
+          </Link>
           <Spacer w="1rem" />
-          <Button>Resume</Button>
+          <a
+            href="https://www.linkedin.com/in/jeff-jakinovich-b6b14943/"
+            target="_blank"
+            rel="noreferrer">
+            <Button>LinkedIn</Button>
+          </a>
         </ButtonContainer>
       </TextContainer>
       <ImgContainer>

@@ -91,6 +91,7 @@ const Logos = styled.div`
 
 const Form = styled.form`
   background: ${({ theme }) => theme.white};
+  border-radius: 0.5rem;
 
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import { useMediaQuery } from "react-responsive";
 
 import Logo from "../assets/Logo";
@@ -137,7 +137,7 @@ const NavBar = () => {
             to="projects"
             spy={true}
             smooth={true}
-            offset={-100}
+            offset={-50}
             duration={500}>
             Projects
           </Link>
@@ -148,7 +148,7 @@ const NavBar = () => {
             to="skills"
             spy={true}
             smooth={true}
-            offset={-100}
+            offset={-50}
             duration={500}>
             Skills
           </Link>
@@ -159,7 +159,7 @@ const NavBar = () => {
             to="about"
             spy={true}
             smooth={true}
-            offset={-100}
+            offset={-50}
             duration={500}>
             About
           </Link>
@@ -170,15 +170,11 @@ const NavBar = () => {
             to="contact"
             spy={true}
             smooth={true}
-            offset={-100}
+            offset={-50}
             duration={500}>
             Contact
           </Link>
         </NavItem>
-        {/* <NavItem>Projects</NavItem>
-        <NavItem>Skills</NavItem>
-        <NavItem>About</NavItem>
-        <NavItem>Contact</NavItem> */}
       </ItemContainer>
     </Container>
   );

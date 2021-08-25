@@ -1,9 +1,30 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { useMediaQuery } from "react-responsive";
 
 import SuccessIcon from "../assets/SuccessIcon";
 
 import media from "../helpers/mediaQueries";
+
+const moveInFromLeft = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+`;
+
+const moveOutToRight = keyframes`
+  from {
+    transform: translateX(0%)
+  }
+
+  to {
+    transform: translateX(100%)
+  }
+`;
 
 const Container = styled.div`
   border-radius: 0.5rem;
@@ -13,19 +34,25 @@ const Container = styled.div`
 
   position: fixed;
   top: 13vh;
-  right: ${({ showToast }) => (showToast ? "2vw" : "-50vw")};
+  right: 2vw;
   display: flex;
   align-items: center;
 
   height: 3.75rem;
   padding: 1rem;
 
-  transition: top right 0.2s ease-out;
+  animation-name: ${({ isNotDesktop, showToast }) =>
+    !isNotDesktop && showToast && moveInFromLeft};
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+
   z-index: 100000;
 
   // 850px
   @media only screen and (max-width: ${media.tablet}) {
-    top: ${({ showToast }) => (showToast ? "12vh" : "-20vh")};
+    border-radius: 0;
+
+    top: 12vh;
     right: 0;
 
     width: 100%;
@@ -50,14 +77,23 @@ const CloseButton = styled.button`
 `;
 
 const Toast = ({ type, message, handleShowToast, showToast }) => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${media.mobile})`,
+  });
+
+  const isNotDesktop = useMediaQuery({
+    query: `(max-width: ${media.tablet})`,
+  });
+
   useEffect(() => {
-    setTimeout(() => {
-      handleShowToast();
-    }, 5000);
-  }, [handleShowToast]);
+    !isMobile &&
+      setTimeout(() => {
+        handleShowToast();
+      }, 4000);
+  }, [handleShowToast, isMobile]);
 
   return (
-    <Container type={type} showToast={showToast}>
+    <Container type={type} showToast={showToast} isNotDesktop={isNotDesktop}>
       <ContentContainer>
         <SuccessIcon />
         <p>{message}</p>
