@@ -251,7 +251,7 @@ const Contact = () => {
   };
 
   return (
-    <Container>
+    <>
       {showToast && (
         <Toast
           {...toastType}
@@ -259,93 +259,95 @@ const Contact = () => {
           showToast={showToast}
         />
       )}
-      <Content>
-        <Text type="heading5">Let's work together.</Text>
-        <Text type="body" light>
-          Whether you think there could be a good fit with your organization, or
-          if you just want to chat about any of the topics above, I would love
-          to hear from you.
-        </Text>
-        <Spacer h="1rem" />
-        <Text type="body" light>
-          If you fill out the form, it will route directly to my email where we
-          can continue the discussion there.
-        </Text>
-        <Spacer h="1rem" />
-        <Text type="body" light>
-          If nothing else, thank you for taking the time to read through my
-          portfolio. You made it all the way to the end! Be sure to check back
-          often as I plan on adding more features that don’t just show off my
-          work but also provides value to you.
-        </Text>
-        <Spacer h="1rem" />
-        <Text type="body" light>
-          I hope you are having a great day!
-        </Text>
-        <Connect>
-          <Text type="heading6">Other ways to connect.</Text>
-          <Logos>
-            <StyledLink href="https://www.linkedin.com/in/jeff-jakinovich-b6b14943/">
-              <LinkedInIcon />
-            </StyledLink>
-            <StyledLink href="https://github.com/jljakin2">
-              <GithubLarge />
-            </StyledLink>
-            <StyledLink
-              href="https://dev.to/jljakin2
+      <Container>
+        <Content>
+          <Text type="heading5">Let's work together.</Text>
+          <Text type="body" light>
+            Whether you think there could be a good fit with your organization,
+            or if you just want to chat about any of the topics above, I would
+            love to hear from you.
+          </Text>
+          <Spacer h="1rem" />
+          <Text type="body" light>
+            If you fill out the form, it will route directly to my email where
+            we can continue the discussion there.
+          </Text>
+          <Spacer h="1rem" />
+          <Text type="body" light>
+            If nothing else, thank you for taking the time to read through my
+            portfolio. You made it all the way to the end! Be sure to check back
+            often as I plan on adding more features that don’t just show off my
+            work but also provides value to you.
+          </Text>
+          <Spacer h="1rem" />
+          <Text type="body" light>
+            I hope you are having a great day!
+          </Text>
+          <Connect>
+            <Text type="heading6">Other ways to connect.</Text>
+            <Logos>
+              <StyledLink href="https://www.linkedin.com/in/jeff-jakinovich-b6b14943/">
+                <LinkedInIcon />
+              </StyledLink>
+              <StyledLink href="https://github.com/jljakin2">
+                <GithubLarge />
+              </StyledLink>
+              <StyledLink
+                href="https://dev.to/jljakin2
             |\\\\">
-              <DevIcon />
-            </StyledLink>
-          </Logos>
-        </Connect>
-      </Content>
-      <Form onSubmit={sendEmail} noValidate>
-        <InputContainer>
-          <StyledInput
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={values.name}
-            onChange={handleChange}
-          />
-          {errors.name && <Error>{errors.name}</Error>}
-        </InputContainer>
-        <InputContainer>
-          <StyledInput
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-          />
-          {errors.email && <Error>{errors.email}</Error>}
-        </InputContainer>
-        <InputContainer>
-          <StyledInput
-            type="text"
-            placeholder="Subject"
-            name="subject"
-            value={values.subject}
-            onChange={handleChange}
-          />
-          {errors.subject && <Error>{errors.subject}</Error>}
-        </InputContainer>
-        <InputContainer>
-          <StyledTextArea
-            placeholder="Message"
-            rows="15"
-            cols="50"
-            name="message"
-            value={values.message}
-            onChange={handleChange}
-          />
-          {errors.message && <Error>{errors.message}</Error>}
-        </InputContainer>
-        <Button full type="submit">
-          Submit
-        </Button>
-      </Form>
-    </Container>
+                <DevIcon />
+              </StyledLink>
+            </Logos>
+          </Connect>
+        </Content>
+        <Form onSubmit={sendEmail} noValidate>
+          <InputContainer>
+            <StyledInput
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={values.name}
+              onChange={handleChange}
+            />
+            {errors.name && <Error>{errors.name}</Error>}
+          </InputContainer>
+          <InputContainer>
+            <StyledInput
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={values.email}
+              onChange={handleChange}
+            />
+            {errors.email && <Error>{errors.email}</Error>}
+          </InputContainer>
+          <InputContainer>
+            <StyledInput
+              type="text"
+              placeholder="Subject"
+              name="subject"
+              value={values.subject}
+              onChange={handleChange}
+            />
+            {errors.subject && <Error>{errors.subject}</Error>}
+          </InputContainer>
+          <InputContainer>
+            <StyledTextArea
+              placeholder="Message"
+              rows="15"
+              cols="50"
+              name="message"
+              value={values.message}
+              onChange={handleChange}
+            />
+            {errors.message && <Error>{errors.message}</Error>}
+          </InputContainer>
+          <Button full type="submit">
+            Submit
+          </Button>
+        </Form>
+      </Container>
+    </>
   );
 };
 

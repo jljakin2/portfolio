@@ -21,6 +21,8 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     color: ${({ theme }) => theme.defaultText};
+
+    position: relative;
 }
 
 .link {
