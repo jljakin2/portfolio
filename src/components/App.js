@@ -12,14 +12,15 @@ import SectionHeader from "./SectionHeader";
 
 import GlobalStyle from "../theme/GlobalStyle";
 import theme from "../theme/theme";
+import media from "../helpers/mediaQueries";
 
 // ===== START OF STYLING =====
 const StyledHeader = styled.header`
   width: 100%;
   height: 90vh;
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     height: 100vh;
   }
 `;

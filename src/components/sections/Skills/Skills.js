@@ -7,6 +7,7 @@ import SkillBar from "./SkillBar";
 
 import { leadership, technical } from "../../../data/data";
 import theme from "../../../theme/theme";
+import media from "../../../helpers/mediaQueries";
 
 const ToggleContainer = styled.div`
   display: flex;
@@ -26,12 +27,12 @@ const ToggleButtons = styled.div`
   width: 20%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     width: 35%;
   }
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     width: 60%;
   }
 `;
@@ -85,14 +86,14 @@ const Container = styled.div`
 
   // ===== MAX-WIDTH =====
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     flex-direction: column;
     column-gap: 0;
     row-gap: 4rem;
   }
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     padding: 0 1.5rem;
   }
 
@@ -114,7 +115,7 @@ const ExperienceContainer = styled.div`
   width: 50%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     width: 100%;
   }
 `;
@@ -126,7 +127,7 @@ const SkillsContainer = styled.div`
   width: 50%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     order: -1;
 
     width: 100%;
@@ -154,30 +155,14 @@ const Skills = () => {
     );
   });
 
-  // state specific styling
-  const technicalStyle = {
-    background: isTech ? theme.mainBtn : theme.white,
-    color: isTech ? theme.white : theme.defaultText,
-  };
-  const leadershipStyle = {
-    background: isTech ? theme.white : theme.leadership,
-    color: isTech ? theme.defaultText : theme.white,
-  };
-
   return (
     <div>
       <ToggleContainer>
         <ToggleButtons>
-          <TechnicalToggle
-            // style={technicalStyle}
-            onClick={() => setIsTech(!isTech)}
-            isTech={isTech}>
+          <TechnicalToggle onClick={() => setIsTech(!isTech)} isTech={isTech}>
             Technical
           </TechnicalToggle>
-          <LeadershipToggle
-            // style={leadershipStyle}
-            onClick={() => setIsTech(!isTech)}
-            isTech={isTech}>
+          <LeadershipToggle onClick={() => setIsTech(!isTech)} isTech={isTech}>
             Leadership
           </LeadershipToggle>
         </ToggleButtons>

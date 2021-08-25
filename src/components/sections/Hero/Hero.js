@@ -7,6 +7,8 @@ import Button from "../../../utilities/Button";
 
 import heroImg from "../../../assets/heroImg.svg";
 
+import media from "../../../helpers/mediaQueries";
+
 // ===== START OF STYLING =====
 const Container = styled.div`
   display: flex;
@@ -19,7 +21,7 @@ const Container = styled.div`
   // ===== MAX-WIDTH =====
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
@@ -27,8 +29,10 @@ const Container = styled.div`
     padding: 3rem 3rem 0 3rem;
   }
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
+    row-gap: 1rem;
+
     padding: 8rem 1.5rem 5rem 1.5rem;
   }
 
@@ -36,13 +40,11 @@ const Container = styled.div`
   // 1600px
   @media only screen and (min-width: 100em) {
     padding: 3rem 10rem 0 10rem;
-    /* background: red; */
   }
 
   // 1800px
   @media only screen and (min-width: 112.5em) {
     padding: 3rem 12rem 0 12rem;
-    /* background: blue; */
   }
 `;
 
@@ -54,14 +56,14 @@ const TextContainer = styled.div`
   width: 50%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     align-items: center;
 
     width: 100%;
   }
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     text-align: center;
   }
 `;
@@ -73,7 +75,7 @@ const ImgContainer = styled.div`
   width: 50%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     order: -1;
     justify-content: center;
 
@@ -86,7 +88,7 @@ const ButtonContainer = styled.div`
   display: flex;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     margin-top: 1.5rem;
   }
 `;
@@ -94,7 +96,6 @@ const ButtonContainer = styled.div`
 const StyledHeroImg = styled.img`
   width: 90%;
 `;
-
 // ===== END OF STYLING =====
 
 const Hero = () => {

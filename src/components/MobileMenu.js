@@ -7,7 +7,7 @@ const BackgroundContainer = styled.div`
   height: 100vh;
 
   position: absolute;
-  top: 15vh;
+  top: 12vh;
   left: 0;
 
   width: 100%;

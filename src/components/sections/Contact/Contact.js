@@ -12,6 +12,7 @@ import Toast from "../../Toast";
 
 // helpers
 import validateForm from "../../../helpers/validateForm";
+import media from "../../../helpers/mediaQueries";
 
 const Container = styled.div`
   display: flex;
@@ -22,14 +23,14 @@ const Container = styled.div`
 
   // ===== MAX-WIDTH =====
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     flex-direction: column;
     align-items: center;
     column-gap: 0;
   }
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     padding: 0 1.5rem 5rem 1.5rem;
   }
 
@@ -53,7 +54,7 @@ const Content = styled.div`
   width: 50%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     align-items: center;
     text-align: center;
 
@@ -70,7 +71,7 @@ const Connect = styled.div`
   margin-bottom: 5rem;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     align-items: center;
 
     margin-top: 3rem;
@@ -83,7 +84,7 @@ const Logos = styled.div`
   align-items: center;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     margin-top: 1rem;
   }
 `;
@@ -99,7 +100,7 @@ const Form = styled.form`
   padding: 2.5rem 2.25rem;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     width: 100%;
   }
 `;
@@ -251,7 +252,13 @@ const Contact = () => {
 
   return (
     <Container>
-      {showToast && <Toast {...toastType} handleShowToast={handleShowToast} />}
+      {showToast && (
+        <Toast
+          {...toastType}
+          handleShowToast={handleShowToast}
+          showToast={showToast}
+        />
+      )}
       <Content>
         <Text type="heading5">Let's work together.</Text>
         <Text type="body" light>

@@ -7,6 +7,8 @@ import GithubSmall from "../../../assets/GithubSmall";
 import LiveIcon from "../../../assets/LiveIcon";
 import Tag from "./Tag";
 
+import media from "../../../helpers/mediaQueries";
+
 // ===== START OF STYLING =====
 const Container = styled.div`
   display: flex;
@@ -19,7 +21,7 @@ const Container = styled.div`
   }
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     flex-direction: column;
     align-items: center;
   }
@@ -32,7 +34,7 @@ const ProjectContent = styled.div`
   width: 50%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     width: 100%;
     margin-bottom: 3rem;
   }
@@ -43,8 +45,8 @@ const ContentHeader = styled.div`
 
   margin-bottom: 2rem;
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     flex-direction: column;
     align-items: center;
   }
@@ -55,8 +57,8 @@ const IconContainer = styled.div`
 
   margin-left: auto;
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     margin: 1.5rem 0 0 0;
   }
 `;
@@ -68,14 +70,14 @@ const ProjectDescription = styled.div`
   width: 50%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     align-items: center;
 
     width: 100%;
   }
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     text-align: center;
   }
 `;
@@ -96,7 +98,7 @@ const TagContainer = styled.div`
   width: 100%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     justify-content: center;
   }
 `;

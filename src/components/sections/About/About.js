@@ -10,14 +10,16 @@ import commImg from "../../../assets/commImg.svg";
 import readingImg from "../../../assets/readingImg.svg";
 import golfImg from "../../../assets/golfImg.svg";
 
+import media from "../../../helpers/mediaQueries";
+
 const Container = styled.div`
   width: 100%;
   padding: 0 5rem;
   margin-bottom: 5rem;
 
   // ===== MAX-WIDTH =====
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     padding: 0 1.5rem;
   }
 
@@ -25,13 +27,11 @@ const Container = styled.div`
   // 1600px
   @media only screen and (min-width: 100em) {
     padding: 0 10rem;
-    /* background: red; */
   }
 
   // 1800px
   @media only screen and (min-width: 112.5em) {
     padding: 0 12rem;
-    /* background: blue; */
   }
 `;
 
@@ -44,7 +44,7 @@ const ItemContainer = styled.div`
   }
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     flex-direction: column;
     align-items: center;
 
@@ -58,7 +58,7 @@ const ItemImage = styled.img`
   width: 25%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     width: 65%;
   }
 `;
@@ -71,7 +71,7 @@ const ItemText = styled.div`
   width: 75%;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     text-align: center;
 
     width: 100%;
@@ -80,7 +80,7 @@ const ItemText = styled.div`
 
 const About = () => {
   const isNotDesktop = useMediaQuery({
-    query: "(max-width: 850px)",
+    query: `(max-width: ${media.tablet})`,
   });
 
   const style = isNotDesktop ? { order: -1, marginBottom: "4rem" } : {};
@@ -136,9 +136,6 @@ const About = () => {
               duration={500}>
               contact
             </Link>
-            {/* <a href="#contact" className="link">
-              contact
-            </a>{" "} */}
             &nbsp;section below.
           </Text>
         </ItemText>

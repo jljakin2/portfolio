@@ -9,6 +9,8 @@ import CloseIcon from "../assets/CloseIcon";
 import MobileLogo from "../assets/MobileLogo";
 import MobileMenu from "./MobileMenu";
 
+import media from "../helpers/mediaQueries";
+
 // ===== START OF STYLING =====
 const Container = styled.div`
   background: ${({ theme }) => theme.white};
@@ -18,19 +20,15 @@ const Container = styled.div`
   position: fixed;
 
   width: 100%;
-  height: 10vh;
+  height: 12vh;
   padding: 0 5rem;
 
   z-index: 10000;
 
   // ===== MAX-WIDTH =====
-  // 900px
-  @media only screen and (max-width: 56.25em) {
-    /* background: yellow; */
-  }
 
-  // 400px
-  @media only screen and (max-width: 25em) {
+  // 450px
+  @media only screen and (max-width: ${media.mobile}) {
     padding: 0 1.5rem;
   }
 
@@ -38,13 +36,11 @@ const Container = styled.div`
   // 1600px
   @media only screen and (min-width: 100em) {
     padding: 0 10rem;
-    /* background: red; */
   }
 
   // 1800px
   @media only screen and (min-width: 112.5em) {
     padding: 0 12rem;
-    /* background: blue; */
   }
 `;
 
@@ -54,7 +50,7 @@ const ItemContainer = styled.div`
   margin-left: auto;
 
   // 850px
-  @media only screen and (max-width: 53.125em) {
+  @media only screen and (max-width: ${media.tablet}) {
     display: none;
   }
 `;
@@ -107,7 +103,7 @@ const NavBar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const isMobile = useMediaQuery({
-    query: "(max-width: 25em)",
+    query: `(max-width: ${media.mobile})`,
   });
 
   const showMobileMenu = () => {
