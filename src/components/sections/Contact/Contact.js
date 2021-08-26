@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import emailjs from "emailjs-com";
 
 import Text from "../../../utilities/Text";
@@ -9,10 +9,12 @@ import LinkedInIcon from "../../../assets/LinkedInIcon";
 import GithubLarge from "../../../assets/GithubLarge";
 import DevIcon from "../../../assets/DevIcon";
 import Toast from "../../Toast";
+import Loader from "react-loader-spinner";
 
 // helpers
 import validateForm from "../../../helpers/validateForm";
 import media from "../../../helpers/mediaQueries";
+import theme from "../../../theme/theme";
 
 const Container = styled.div`
   display: flex;
@@ -174,6 +176,7 @@ const Contact = () => {
 
   const [showToast, setShowToast] = useState(false);
   const [toastType, setToastType] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleShowToast = () => {
     setShowToast(!showToast);
@@ -192,6 +195,7 @@ const Contact = () => {
 
     // send email if there aren't any errors
     if (Object.keys(formErrors).length === 0) {
+      setIsLoading(true);
       emailjs
         .sendForm(
           REACT_APP_EMAILJS_SERVICE_KEY,
@@ -213,6 +217,7 @@ const Contact = () => {
               subject: "",
               message: "",
             });
+            setIsLoading(false);
           },
           error => {
             console.log(error.text);
@@ -227,6 +232,7 @@ const Contact = () => {
               subject: "",
               message: "",
             });
+            setIsLoading(false);
           }
         );
     }
@@ -344,7 +350,15 @@ const Contact = () => {
             {errors.message && <Error>{errors.message}</Error>}
           </InputContainer>
           <Button full type="submit">
-            Submit
+            {!isLoading && "Send"}
+            {isLoading && (
+              <Loader
+                type="TailSpin"
+                color={theme.white}
+                width={15}
+                height={15}
+              />
+            )}
           </Button>
         </Form>
       </Container>
@@ -352,4 +366,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default withTheme(Contact);
