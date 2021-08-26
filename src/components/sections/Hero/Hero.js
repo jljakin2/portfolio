@@ -121,12 +121,16 @@ const Hero = () => {
             <Button outline>Contact Me</Button>
           </Link>
           <Spacer w="1rem" />
-          <a
-            href="https://www.linkedin.com/in/jeff-jakinovich-b6b14943/"
-            target="_blank"
-            rel="noreferrer">
-            <Button>LinkedIn</Button>
-          </a>
+
+          <Button>
+            <a
+              href="https://www.linkedin.com/in/jeff-jakinovich-b6b14943/"
+              target="_blank"
+              rel="noreferrer"
+              className="button-link">
+              LinkedIn
+            </a>
+          </Button>
         </ButtonContainer>
       </TextContainer>
       <ImgContainer>

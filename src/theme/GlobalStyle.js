@@ -25,6 +25,11 @@ body {
     position: relative;
 }
 
+.button-link {
+    color: ${({ theme }) => theme.white};
+    text-decoration: none;
+}
+
 .link {
     border-radius: 2px;
     color: ${({ theme }) => theme.defaultText};
