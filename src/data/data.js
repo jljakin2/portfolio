@@ -67,9 +67,10 @@ export const technical = {
     {
       heading: "Senior Business Operations Specialist",
       experienceItems: [
-        "Influenced stakeholders to continue an outsourced mentorship program by designing an in-house platform, enabling 300+ associates across North America to pair up as mentors/mentees with self-service functions, saving $16k annually. (See Mentor Match above)",
+        "Influenced executives to continue an outsourced mentorship program by designing an in-house platform, enabling 300+ associates across North America to pair up as mentors/mentees with self-service functions, saving $16k annually. (See Mentor Match above)",
         "Empowered business clients with custom-designed Python scripts and GUIs created with Python libraries to clean, manipulate, and automate manual data processing, reducing time spent on task from 50 hours to 2 hours.",
-        "Revamped a company-wide 360º management survey process with Catalytic and Power BI, eliminating the need to hire multiple interns, saving $20k in annual operating costs, and 1k+ hours in processing time.",
+        "Revamped a companywide 360º management survey process with Catalytic and Power BI, eliminating the need to hire multiple interns, saving $20k in annual operating costs, and 1k+ hours in processing time.",
+        "Created and executed a Fundamentals of Python training series which was taken by over 100 associates aimed at helping participants begin using Python in their organizations for data analytics and automation.",
       ],
     },
   ],
@@ -91,16 +92,16 @@ export const leadership = {
     {
       heading: "Senior Business Operations Specialist",
       experienceItems: [
-        "Consultant to 10 technology and business partners across CA, MI, and Germany, facilitating various workshops to evaluate current state processes and create roadmaps aligning future state developments to business requirements.",
-        "Leveraged custom-built analytics tools to expand transparency into business operations and discover and implement process improvements, saving clients an average 15% working time within three months across all identified solutions.",
-        "Collaborated on a company-wide change in response to the pandemic by re-engineering work structures to a remote model affecting a population of 30k employees, working closely with division executives to validate model effectiveness.",
+        "Lead Consultant to 10 technology and business partners across CA, MI, and Germany, facilitating strategy workshops to evaluate current state processes and create roadmaps aligning future state developments to business requirements.",
+        "Leveraged data analytics tools to expand transparency into business operations and discover and implement process improvements, saving clients an average of 15% working time within three months across many functions.",
+        "Change Manager for a companywide change in response to the pandemic by reengineering work structures to a remote model affecting a population of 30k employees, working closely with division executives to validate model effectiveness.",
         "Delivered a keynote address to internal executives at a regional event, introducing digital transformation topics as well as ways to visualize and interpret data to enable more informed decision-making processes.",
       ],
     },
     {
       heading: "Project Manager (Scrum Master)",
       experienceItems: [
-        "Directed an agile project team through development of a hybrid delivery truck on a multi-year Department of Energy government contract, from proof of concept to end of year approval with technology currently in production.",
+        "Directed an agile project team through the development of a hybrid delivery truck on a multi-year Department of Energy government contract, from proof of concept to end-of-year approval with technology currently in production.",
       ],
     },
     {
