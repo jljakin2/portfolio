@@ -99,7 +99,7 @@ const About = () => {
           <Text type="body" light>
             I’ve spent the majority of my career in positions leveraging all
             types of communications. I've generated content in print, digital,
-            social media, photography, video. I'm also comfortable giving
+            social media, photography, and video. I'm also comfortable giving
             keynote presentations, training, and coaching teams to better their
             performance. I find so much joy in taking what I know and sharing it
             with others.

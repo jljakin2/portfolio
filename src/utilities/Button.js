@@ -24,6 +24,10 @@ const StyledButton = styled.button`
     color: ${({ theme }) => theme.white};
   }
 
+  &:active {
+    transform: scale(0.98);
+  }
+
   // 400px
   @media only screen and (max-width: 25em) {
     font-size: 0.75rem;
