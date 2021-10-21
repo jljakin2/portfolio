@@ -271,8 +271,9 @@ const Contact = () => {
           <Text type="heading5">Let's work together.</Text>
           <Text type="body" light>
             Whether you think there could be a good fit with your organization,
-            or if you just want to chat about any of the topics above, I would
-            love to hear from you.
+            there is an interesting project you want to partner on, or if you
+            just want to chat about any of the topics above, I would love to
+            hear from you.
           </Text>
           <Spacer h="1rem" />
           <Text type="body" light>
@@ -288,7 +289,7 @@ const Contact = () => {
           </Text>
           <Spacer h="1rem" />
           <Text type="body" light>
-            I hope you are having a great day!
+            I hope you have a great day!
           </Text>
           <Connect>
             <Text type="heading6">Other ways to connect.</Text>

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import SingleProject from "./SingleProject";
+import Spacer from "../../../utilities/Spacer";
+import Button from "../../../utilities/Button";
+import MoreProjectsList from "./MoreProjectsList";
 
 import { projects } from "../../../data/data";
 import media from "../../../helpers/mediaQueries";
@@ -31,12 +34,29 @@ const Container = styled.div`
   }
 `;
 
+const ButtonContainer = styled.div`
+  text-align: center;
+`;
+
 const ListOfProjects = () => {
+  const [isMore, setIsMore] = useState(false);
+
   const renderedProjects = projects.map(project => {
     return <SingleProject {...project} />;
   });
 
-  return <Container>{renderedProjects}</Container>;
+  return (
+    <>
+      <Container>{renderedProjects}</Container>
+      <Spacer h="6rem" />
+      <ButtonContainer onClick={() => setIsMore(!isMore)}>
+        <Button outline>More Projects</Button>
+      </ButtonContainer>
+      <Spacer h="6rem" />
+      {isMore && <MoreProjectsList />}
+      {isMore && <Spacer h="4rem" />}
+    </>
+  );
 };
 
 export default ListOfProjects;
