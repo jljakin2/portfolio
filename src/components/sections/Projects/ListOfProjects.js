@@ -52,7 +52,7 @@ const ListOfProjects = () => {
       <ButtonContainer onClick={() => setIsMore(!isMore)}>
         <Button outline>More Projects</Button>
       </ButtonContainer>
-      <Spacer h="4rem" />
+      <Spacer h="6rem" />
       {isMore && <MoreProjectsList />}
       {isMore && <Spacer h="4rem" />}
     </>

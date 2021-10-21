@@ -1,15 +1,19 @@
+// Main projects imports
 import mentorMatch from "../assets/mentorMatch.png";
 import audiophile from "../assets/audiophile.png";
-import clock from "../assets/clock.png";
-import todo from "../assets/todo.png";
-import splitter from "../assets/splitter.png";
-import loopstudios from "../assets/loopstudios.png";
-import room from "../assets/room.png";
-import pricing from "../assets/pricing.png";
-import pricingGrid from "../assets/pricingGrid.png";
-import faqAccordion from "../assets/faqAccordion.png";
-import signUpForm from "../assets/signUpForm.png";
-import testimonials from "../assets/testimonials.png";
+
+// More projects imports
+import clock from "../assets/screenshots/Clock.png";
+import todo from "../assets/screenshots/ToDo.png";
+import splitter from "../assets/screenshots/Splitter.png";
+import loopstudios from "../assets/screenshots/Loop Studios.png";
+import room from "../assets/screenshots/ROOM Furniture.png";
+import dynamicPricing from "../assets/screenshots/Dynamic Pricing.png";
+import pricingGrid from "../assets/screenshots/Product Pricing Grid.png";
+import faqAccordion from "../assets/screenshots/FAQ Accordion.png";
+import bootcampSignUp from "../assets/screenshots/Bootcamp Sign Up.png";
+import testimonials from "../assets/screenshots/Testimonials Grid.png";
+import blogr from "../assets/screenshots/Blogr.png";
 
 export const projects = [
   {
@@ -138,84 +142,104 @@ export const leadership = {
 };
 
 export const moreProjects = [
+  // keep descriptions to 25-30 words
   {
     id: 1,
-    name: "Clock",
-    description: "",
+    name: "Clock App",
+    description:
+      "Real-time clock app that provides information about the user's location and motivational quotes. The content dynamically changes including the background based on the time of day.",
     screenshot: clock,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    github: "https://github.com/jljakin2/clock",
+    live: "https://clock-neon-ten.vercel.app/",
   },
   {
     id: 2,
-    name: "ToDo",
-    description: "",
+    name: "ToDo App",
+    description:
+      "Classic todo app that lets users add their todo items and filter them based on status. Users can toggle between light and dark mode.",
     screenshot: todo,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    github: "https://github.com/jljakin2/darkLightTodoList",
+    live: "https://dark-light-todo-list.vercel.app/",
   },
   {
     id: 3,
     name: "Splitter",
-    description: "",
+    description:
+      "Tip calculator that lets users enter their bill and party size to calculate how much they should tip based on the percentage they want to pay.",
     screenshot: splitter,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    github: "https://github.com/jljakin2/tipCalculator",
+    live: "https://tip-calculator-lake.vercel.app/",
   },
   {
     id: 4,
     name: "Loop Studios",
-    description: "",
+    description:
+      "Landing page for a fictional VR company. Built with vanilla JS and Sass to organize styles. Layout mainly uses flexbox with some grid for the photos.",
     screenshot: loopstudios,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    github: "https://github.com/jljakin2/loopstudios",
+    live: "https://loopstudios-jljakin2.vercel.app/",
   },
   {
     id: 5,
     name: "ROOM Furniture",
-    description: "",
+    description:
+      "Landing page for a fictional furniture company called ROOM. There is a custom carousel that allows the user to view multiple products from the home page.",
     screenshot: room,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    github: "https://github.com/jljakin2/roomCarousel",
+    live: "https://room-carousel.vercel.app/",
   },
   {
     id: 6,
     name: "Dynamic Pricing",
-    description: "",
-    screenshot: pricing,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    description:
+      "Pricing component with a custom range input that allows users to see their price based on page views. Option to toggle billing from per month to per year.",
+    screenshot: dynamicPricing,
+    github: "https://github.com/jljakin2/pricing_component",
+    live: "https://pricing-component-git-master-jljakin2.vercel.app/",
   },
   {
     id: 7,
-    name: "Pricing Grid",
-    description: "",
-    screenshot: pricingGrid,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    name: "Blogr",
+    description:
+      "Responsive landing page for a fake blogging company called Blogr. I used Sass for the styling with customized media-query mixins to handle the responsiveness.",
+    screenshot: blogr,
+    github: "https://github.com/jljakin2/blogr",
+    live: "https://blogr-jljakin2.vercel.app/",
   },
   {
     id: 8,
-    name: "FAQ Accordion",
-    description: "",
-    screenshot: faqAccordion,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    name: "Product Pricing Grid",
+    description:
+      "Pricing component that could be used in any type of application. I used Grid for the layout and the design is responsive for all devices.",
+    screenshot: pricingGrid,
+    github: "https://github.com/jljakin2/singlePriceGrid",
+    live: "https://single-price-grid-git-master-jljakin2.vercel.app/",
   },
   {
     id: 9,
-    name: "Sign Up Form",
-    description: "",
-    screenshot: signUpForm,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    name: "FAQ Accordion",
+    description:
+      "FAQ accordion component where users can click on the questions and the answer will appear underneath each question. Fully responsive and built using HTML/CSS (Sass) and vanilla JS.",
+    screenshot: faqAccordion,
+    github: "https://github.com/jljakin2/faqAccordion",
+    live: "https://faq-accordion-jljakin2.vercel.app/",
   },
   {
     id: 10,
-    name: "Testimonials",
-    description: "",
+    name: "Bootcamp Sign Up",
+    description:
+      "Sign up component for a fictional coding Bootcamp. Fully responsive built using HTML/CSS and vanilla JS for the custom form validation.",
+    screenshot: bootcampSignUp,
+    github: "https://github.com/jljakin2/signUpForm",
+    live: "https://sign-up-form-jljakin2.vercel.app/",
+  },
+  {
+    id: 11,
+    name: "Testimonials Grid",
+    description:
+      "Testimonials component built using CSS Grid. Fully responsive and developed using a desktop-first workflow.",
     screenshot: testimonials,
-    github: "https://github.com/jljakin2/mentorMatch",
-    live: "https://mentor-match-us.herokuapp.com/",
+    github: "https://github.com/jljakin2/gridTestimonials",
+    live: "https://grid-testimonials-seven.vercel.app/",
   },
 ];
