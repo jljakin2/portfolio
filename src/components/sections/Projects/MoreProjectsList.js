@@ -1,14 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
+import SingleMoreProject from "./SingleMoreProject";
+
+import { moreProjects } from "../../../data/data";
 import media from "../../../helpers/mediaQueries";
 
 const Container = styled.div`
-  background: orangered;
-  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-items: center;
+  grid-row-gap: 6rem;
+  grid-column-gap: 2.5rem;
 
   width: 100%;
-  height: 25rem;
   padding: 0 5rem;
 
   // ===== MAX-WIDTH =====
@@ -30,7 +35,11 @@ const Container = styled.div`
 `;
 
 const MoreProjectsList = () => {
-  return <Container>MoreProjectsList</Container>;
+  const renderedMoreProjects = moreProjects.map((project, index) => {
+    return <SingleMoreProject key={index} {...project} />;
+  });
+
+  return <Container>{renderedMoreProjects}</Container>;
 };
 
 export default MoreProjectsList;

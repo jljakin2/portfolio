@@ -1,5 +1,15 @@
 import mentorMatch from "../assets/mentorMatch.png";
 import audiophile from "../assets/audiophile.png";
+import clock from "../assets/clock.png";
+import todo from "../assets/todo.png";
+import splitter from "../assets/splitter.png";
+import loopstudios from "../assets/loopstudios.png";
+import room from "../assets/room.png";
+import pricing from "../assets/pricing.png";
+import pricingGrid from "../assets/pricingGrid.png";
+import faqAccordion from "../assets/faqAccordion.png";
+import signUpForm from "../assets/signUpForm.png";
+import testimonials from "../assets/testimonials.png";
 
 export const projects = [
   {
@@ -126,3 +136,86 @@ export const leadership = {
     { skillName: "Problem Solving", skillLevel: "85%" },
   ],
 };
+
+export const moreProjects = [
+  {
+    id: 1,
+    name: "Clock",
+    description: "",
+    screenshot: clock,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 2,
+    name: "ToDo",
+    description: "",
+    screenshot: todo,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 3,
+    name: "Splitter",
+    description: "",
+    screenshot: splitter,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 4,
+    name: "Loop Studios",
+    description: "",
+    screenshot: loopstudios,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 5,
+    name: "ROOM Furniture",
+    description: "",
+    screenshot: room,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 6,
+    name: "Dynamic Pricing",
+    description: "",
+    screenshot: pricing,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 7,
+    name: "Pricing Grid",
+    description: "",
+    screenshot: pricingGrid,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 8,
+    name: "FAQ Accordion",
+    description: "",
+    screenshot: faqAccordion,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 9,
+    name: "Sign Up Form",
+    description: "",
+    screenshot: signUpForm,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+  {
+    id: 10,
+    name: "Testimonials",
+    description: "",
+    screenshot: testimonials,
+    github: "https://github.com/jljakin2/mentorMatch",
+    live: "https://mentor-match-us.herokuapp.com/",
+  },
+];
