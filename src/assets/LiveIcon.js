@@ -7,8 +7,16 @@ const StyledIcon = styled.svg`
   cursor: pointer;
 `;
 
-const LiveIcon = () => {
+const LiveIcon = ({ light }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const fillStyle = isLight => {
+    if (isLight) {
+      return isHovered ? theme.inputBorder : theme.white;
+    } else {
+      return isHovered ? theme.btnHover : theme.mainBtn;
+    }
+  };
 
   return (
     <StyledIcon
@@ -28,7 +36,7 @@ const LiveIcon = () => {
         <g
           id="Desktop"
           transform="translate(-638.000000, -947.000000)"
-          fill={isHovered ? theme.btnHover : theme.mainBtn}
+          fill={fillStyle(light)}
           fillRule="nonzero">
           <g
             id="Live-Broadcasting"
@@ -47,6 +55,10 @@ const LiveIcon = () => {
       </g>
     </StyledIcon>
   );
+};
+
+LiveIcon.defaultProps = {
+  light: false,
 };
 
 export default withTheme(LiveIcon);
