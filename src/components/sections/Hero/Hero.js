@@ -104,11 +104,16 @@ const Hero = () => {
   return (
     <Container>
       <TextContainer>
+        {/* <Text type="heading4" light>
+          Hi.
+        </Text>
+        <Spacer h="0.5rem" /> */}
         <Text type="heading4" light>
           Hi. My name is Jeff.
         </Text>
-        <Spacer h="0.5rem" />
-        <Text type="heading1">I am a web developer</Text>
+
+        <Spacer h="1.5rem" />
+        <Text type="heading1">I solve problems using code.</Text>
         <Spacer h="3rem" />
         <ButtonContainer>
           <Link
