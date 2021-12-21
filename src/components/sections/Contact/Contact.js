@@ -8,6 +8,8 @@ import Button from "../../../utilities/Button";
 import LinkedInIcon from "../../../assets/LinkedInIcon";
 import GithubLarge from "../../../assets/GithubLarge";
 import DevIcon from "../../../assets/DevIcon";
+import HashnodeIcon from "../../../assets/HashnodeIcon";
+import TwitterIcon from "../../../assets/TwitterIcon";
 import Toast from "../../Toast";
 import Loader from "react-loader-spinner";
 
@@ -294,17 +296,10 @@ const Contact = () => {
           <Connect>
             <Text type="heading6">Other ways to connect.</Text>
             <Logos>
-              <StyledLink href="https://www.linkedin.com/in/jeff-jakinovich-b6b14943/">
-                <LinkedInIcon />
-              </StyledLink>
-              <StyledLink href="https://github.com/jljakin2">
-                <GithubLarge />
-              </StyledLink>
-              <StyledLink
-                href="https://dev.to/jljakin2
-            |\\\\">
-                <DevIcon />
-              </StyledLink>
+              <LinkedInIcon />
+              <GithubLarge />
+              <TwitterIcon />
+              <HashnodeIcon />
             </Logos>
           </Connect>
         </Content>
