@@ -1,6 +1,7 @@
 // Main projects imports
 import mentorMatch from "../assets/mentorMatch.png";
 import audiophile from "../assets/audiophile.png";
+import productFeedback from "../assets/product_feedback.png";
 
 // More projects imports
 import clock from "../assets/screenshots/Clock.png";
@@ -72,6 +73,39 @@ export const projects = [
       </div>,
       "I used the MERN stack to complete this project. React allowed me to build a scalable front-end experience for the user. I also used Redux to help with the state management. All elements were custom styled using Styled Components. I built the backend using Node.js, Express, and MongoDB. I also built a REST API  for the front-end and back-end to communicate.  I used Redux-Thunk to request data to feed into the global state so each React component can get access to it.",
       "Take a look around the store and if you see anything you like add it to the cart. Don’t worry…whatever you order is on the house 😃.",
+    ],
+  },
+  {
+    name: "Product Feedback",
+    screenshot: productFeedback,
+    github: "https://github.com/jljakin2/product-feedback-next",
+    live: "https://product-feedback-next.vercel.app/",
+    tags: [
+      "HTML",
+      "CSS",
+      "JSX",
+      "Javascript",
+      "Next.js",
+      "MongoDB",
+      "GraphQL",
+      "React",
+      "Styled-Components",
+      "Apollo",
+      "Git",
+    ],
+    description: [
+      <div>
+        This was another "Guru" level project from{" "}
+        <a href="https://www.frontendmentor.io" className="link">
+          Frontend Mentor
+        </a>
+        . The purpose of the app is to allow users to submit feedback and
+        feature requests for a software platform. Users can submit a suggestion,
+        see other suggestions and comment on them, up-vote their favorite
+        suggestions, and see the status of their favorite suggestions based on
+        the roadmap of features the platform team is currently working on.
+      </div>,
+      "I used Next.js and Styled Components to build out the front-end architecture. I really enjoy using Next.js, especially when it comes time to deploy the application. I stored all of the data in a MongoDB which is hooked up to a GraphQL API. I used Apollo on the front-end to connect to the GraphQL API. Lastly, I used KeystoneJS as a headless CMS so you can easily manage the back-end data via the simple CMS UI.",
     ],
   },
 ];
