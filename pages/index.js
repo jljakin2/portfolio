@@ -34,10 +34,28 @@ export default function Home() {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
         <title>Jeff Jakinovich</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="I am a passionate full-stack developer who uses the MERN (MongoDB, ExpressJS, ReactJS, NodeJS) stack to solve problems that drive business results"
+        />
+        <meta
+          property="og:title"
+          content="How to Become an SEO Expert (8 Steps)"
+        />
+        <meta
+          property="og:description"
+          content="Get from SEO newbie to SEO pro in 8 simple steps."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dpp64ouz9/image/upload/v1652322606/devPortfolio/heroImg_xyjlto.svg"
+        />
+        <meta name="robots" content="index, follow" />
       </Head>
-
       <StyledHeader id="home">
         <Navbar />
         <Hero />
