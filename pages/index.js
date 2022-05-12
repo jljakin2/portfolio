@@ -44,11 +44,11 @@ export default function Home() {
         />
         <meta
           property="og:title"
-          content="How to Become an SEO Expert (8 Steps)"
+          content="Jeff Jakinovich - Full-Stack Developer"
         />
         <meta
           property="og:description"
-          content="Get from SEO newbie to SEO pro in 8 simple steps."
+          content="I am a passionate full-stack developer who uses the MERN (MongoDB, ExpressJS, ReactJS, NodeJS) stack to solve problems that drive business results"
         />
         <meta
           property="og:image"
